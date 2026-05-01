@@ -1,0 +1,214 @@
+
+[2026-05-01T10:48:00.854Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 24ms
+----------------------------------------
+
+[2026-05-01T10:50:52.152Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 2ms
+----------------------------------------
+
+[2026-05-01T11:06:04.214Z]
+GET /
+Status: 200
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 6ms
+----------------------------------------
+
+[2026-05-01T11:13:28.335Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 4ms
+----------------------------------------
+
+[2026-05-01T11:14:05.564Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 1ms
+----------------------------------------
+
+[2026-05-01T11:30:18.289Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 7ms
+----------------------------------------
+
+[2026-05-01T11:32:50.513Z]
+GET /
+Status: 200
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 8ms
+----------------------------------------
+
+[2026-05-01T11:32:50.594Z]
+GET /favicon.ico
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 4ms
+----------------------------------------
+
+[2026-05-01T11:33:12.420Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 2ms
+----------------------------------------
+
+[2026-05-01T11:33:22.085Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 1ms
+----------------------------------------
+
+[2026-05-01T11:43:24.896Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 7ms
+----------------------------------------
+
+[2026-05-01T11:43:33.926Z]
+GET /
+Status: 200
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 0ms
+----------------------------------------
+
+[2026-05-01T11:51:43.874Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 5ms
+----------------------------------------
+
+[2026-05-01T12:05:20.038Z]
+GET /.well-known/appspecific/com.chrome.devtools.json
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 8ms
+----------------------------------------
+
+[2026-05-01T12:05:24.671Z]
+GET /.well-known/appspecific/com.chrome.devtools.json
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 1ms
+----------------------------------------
+
+[2026-05-01T12:11:35.277Z]
+GET /auth/docs/
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 13ms
+----------------------------------------
+
+[2026-05-01T12:11:39.016Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 2ms
+----------------------------------------
+
+[2026-05-01T12:11:39.106Z]
+GET /favicon.ico
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 1ms
+----------------------------------------
+
+[2026-05-01T12:12:02.903Z]
+GET /users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 0ms
+----------------------------------------
+
+[2026-05-01T12:12:17.062Z]
+GET /users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 0ms
+----------------------------------------
+
+[2026-05-01T12:13:11.892Z]
+POST /auth/register
+Status: 201
+Request body: {"username":"newuser","email":"newuser@example.com","password":"Password123!","role":["user"]}
+Response body: {"id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]}
+Duration: 235ms
+----------------------------------------
+
+[2026-05-01T12:13:18.495Z]
+GET /users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 0ms
+----------------------------------------
+
+[2026-05-01T12:14:03.423Z]
+GET /users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 4ms
+----------------------------------------
+
+[2026-05-01T12:15:14.247Z]
+GET /users
+Status: 200
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"],"password":"$2b$10$8XL61Sp2Blh5CbJq.0AFUuxiQN3oJPBsjQlL0e/yRCy38HJ7ObXci"}]
+Duration: 80ms
+----------------------------------------
+
+[2026-05-01T12:15:49.010Z]
+GET /
+Status: 304
+Request body: EMPTY
+Response body: Hello from the auth-server-service express app!
+ Try /api-docs/v3 to retrive all docs.
+Duration: 2ms
+----------------------------------------

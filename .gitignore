@@ -1,0 +1,7 @@
+# Ignore all files below
+.env
+*/env
+
+/node_modules
+*node_modules/*
+node_modules
