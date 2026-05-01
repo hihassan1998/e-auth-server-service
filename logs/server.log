@@ -212,3 +212,51 @@ Response body: Hello from the auth-server-service express app!
  Try /api-docs/v3 to retrive all docs.
 Duration: 2ms
 ----------------------------------------
+
+[2026-05-01T12:46:13.828Z]
+POST /auth/register
+Status: 400
+Request body: {"username":"newuser","email":"newuser@example.com","password":"Password123!","role":["user"]}
+Response body: {"error":"Username or email already exists"}
+Duration: 84ms
+----------------------------------------
+
+[2026-05-01T12:46:22.548Z]
+POST /auth/login
+Status: 400
+Request body: {"email":"user@example.com","password":"Password123!"}
+Response body: {"error":"User not found"}
+Duration: 62ms
+----------------------------------------
+
+[2026-05-01T12:46:24.752Z]
+POST /auth/login
+Status: 400
+Request body: {"email":"user@example.com","password":"Password123!"}
+Response body: {"error":"User not found"}
+Duration: 60ms
+----------------------------------------
+
+[2026-05-01T12:46:38.672Z]
+POST /auth/register
+Status: 201
+Request body: {"username":"user","email":"user@example.com","password":"Password123!","role":["user"]}
+Response body: {"id":"69f4a0ae65d691b73b9beefc","username":"user","email":"user@example.com","role":["user"]}
+Duration: 224ms
+----------------------------------------
+
+[2026-05-01T12:46:43.074Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"user@example.com","password":"Password123!"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjRhMGFlNjVkNjkxYjczYjliZWVmYyIsInVzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3Nzc2Mzk2MDMsImV4cCI6MTc3NzcyNjAwM30.Khvu-8mT-n4nXoXzhjQRknLDltyGVJPuxiaZnzqF3Vw"}
+Duration: 142ms
+----------------------------------------
+
+[2026-05-01T12:53:03.212Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"user@example.com","password":"Password123!"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZjRhMGFlNjVkNjkxYjczYjliZWVmYyIsInVzZXJuYW1lIjoidXNlciIsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3Nzc2Mzk5ODMsImV4cCI6MTc3NzcyNjM4M30.TASwOmnPr2fhCYk9r9xD12sQJhbrBmXCs2Bipne5pL8"}
+Duration: 156ms
+----------------------------------------

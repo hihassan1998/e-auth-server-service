@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET || 'secret_auth_key';
 const JWT_EXPIRES_IN = '1d';
 
+
 async function registerUser({ username, email, password, role }) {
     if (!username || !email || !password) throw new Error('Username, email and password are required');
 

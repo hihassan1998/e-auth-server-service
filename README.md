@@ -51,3 +51,5 @@ This repository and its microservices are being developed as part of the researc
 The system is designed and implemented by Hassan Ishfaq Hussain, acting as the lead developer, with a focus on building a scalable microservice architecture for authentication, user management, business logic, and frontend integration.
 
 Ibrahim Sohail Dar contributes as the accountant and business domain specialist, primarily responsible for defining and supporting the financial models, investment logic, and business rules that shape the core functionality of the platform.
+
+![alt text](earnLogo-RMbG.png)
