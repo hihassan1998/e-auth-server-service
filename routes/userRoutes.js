@@ -37,9 +37,10 @@ const authMiddleware = require('../middleware/authMiddleware')
  *       500:
  *         description: Server error
  */
-router.get("/users", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const users = await User.find();
+    // const users = await User.find();
+    const users = await User.find().select("-password");
     res.status(200).json(users);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -73,7 +74,7 @@ router.get("/users", async (req, res) => {
  *         description: Server error
  */
 // DElte user by its id
-router.delete("/users/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   const userId = req.params.id;
 
   try {
@@ -145,7 +146,7 @@ router.delete("/users/:id", async (req, res) => {
  *       500:
  *         description: Server error
  */
-router.put("/users/me", authMiddleware, async (req, res) => {
+router.put("/me", authMiddleware, async (req, res) => {
   const userId = req.user.id;
   const { username, email, password } = req.body;
 

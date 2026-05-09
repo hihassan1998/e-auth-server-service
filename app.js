@@ -17,7 +17,8 @@ const userRoutes = require('./routes/userRoutes');
 
 
 // const googleRoutes = require('./routes/googleRoutes');
-const cors = require("./middleware/corsConfig")
+// const cors = require("./middleware/corsConfig")
+const cors = require("cors");
 const fileLogger = require("./middleware/fileLogger");
 
 
@@ -28,10 +29,7 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 
-setupSwagger(app);
-
-
-app.use(cors)
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 // app.use(passport.initialize()); 
@@ -42,30 +40,41 @@ app.use(fileLogger);
 // Define routes centerally
 // app.use('/', userRoutes);
 app.use('/auth', authRoutes);
-app.use('/', userRoutes);
+
+app.use((req, res, next) => {
+  console.log("🔥 AUTH SERVER HIT:", req.method, req.url);
+  next();
+});
+
+
+app.use('/users', userRoutes);
 // app.use('/auth/google', googleRoutes);
 
-// GET / - fetch astring as a swager docs example
-/**
- * @swagger
- * /:
- *   get:
- *     tags:
- *         - Get basic data string
- *     summary: Get basic string
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Success with message
- *       401:
- *         description: Unauthorized
- *       500:
- *         description: Server error
- */
-app.get('/', (req, res) => {
-    res.send('Hello from the auth-server-service express app!\n Try /api-docs/v3 to retrive all docs.')
-})
+// // GET / - fetch astring as a swager docs example
+// /**
+//  * @swagger
+//  * /:
+//  *   get:
+//  *     tags:
+//  *         - Get basic data string
+//  *     summary: Get basic string
+//  *     security:
+//  *       - bearerAuth: []
+//  *     responses:
+//  *       200:
+//  *         description: Success with message
+//  *       401:
+//  *         description: Unauthorized
+//  *       500:
+//  *         description: Server error
+//  */
+// app.get('/', (req, res) => {
+//     res.send('Hello from the auth-server-service express app!\n Try /api-docs/v3 to retrive all docs. Or try json route of : /swagger.json')
+// })
+
+
+
+setupSwagger(app);
 
 // show coverage status/code health in production at /coverage route
 if (process.env.NODE_ENV !== "production") {
