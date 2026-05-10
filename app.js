@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3001;
-// const passport = require('passport');
+const passport = require('passport');
 // Require seaprete passports for google and github
-// require('./oauth/google')(passport);
+require('./oauth/google')(passport);
 const cookieParser = require('cookie-parser');
 // Require database constant
 const { connectDB } = require('./db/database');
@@ -16,7 +16,7 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 
-// const googleRoutes = require('./routes/googleRoutes');
+const googleRoutes = require('./routes/googleRoutes');
 // const cors = require("./middleware/corsConfig")
 const cors = require("cors");
 const fileLogger = require("./middleware/fileLogger");
@@ -32,9 +32,43 @@ if (process.env.NODE_ENV !== "test") {
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-// app.use(passport.initialize()); 
+app.use(passport.initialize()); 
 // use file logger to log api req/res
 app.use(fileLogger);
+const authLogger = require("./middleware/experimentLogger");
+app.use(authLogger);
+
+
+app.use(express.json());
+
+// 👇 ADD HERE
+app.use((req, res, next) => {
+  const start = Date.now();
+
+  const requestSize = Buffer.byteLength(
+    JSON.stringify(req.body || {})
+  );
+
+  console.log("🔐 AUTH SERVER REQUEST:", {
+    method: req.method,
+    url: req.originalUrl,
+    requestSizeBytes: requestSize,
+  });
+
+  res.on("finish", () => {
+    const duration = Date.now() - start;
+
+    console.log("📊 AUTH SERVER LOG:", {
+      method: req.method,
+      url: req.originalUrl,
+      status: res.statusCode,
+      durationMs: duration,
+      responseSize: res.get("Content-Length"),
+    });
+  });
+
+  next();
+});
 
 
 // Define routes centerally
@@ -48,7 +82,7 @@ app.use((req, res, next) => {
 
 
 app.use('/users', userRoutes);
-// app.use('/auth/google', googleRoutes);
+app.use('/auth/google', googleRoutes);
 
 // // GET / - fetch astring as a swager docs example
 // /**

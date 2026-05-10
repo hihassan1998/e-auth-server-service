@@ -8024,3 +8024,667 @@ Request body: EMPTY
 Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]}]
 Duration: 67ms
 ----------------------------------------
+
+[2026-05-09T23:30:48.876Z]
+GET /auth/google
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 35ms
+----------------------------------------
+
+[2026-05-09T23:31:37.066Z]
+GET /auth/google
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 3ms
+----------------------------------------
+
+[2026-05-09T23:32:19.572Z]
+GET /auth/google
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-09T23:59:09.541Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 14ms
+----------------------------------------
+
+[2026-05-09T23:59:35.065Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM9NC9CkgPqKbmECyCwjcKwRW1Z9SyfTXti5TfJ2XkqRqEmoLezo_k9OO4FhLdg_7w&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 4ms
+----------------------------------------
+
+[2026-05-10T00:01:23.068Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 6ms
+----------------------------------------
+
+[2026-05-10T00:01:26.311Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3MTI4NiwiZXhwIjoxNzc4NDU3Njg2fQ.Sr1WgnDHdglrC4Vx1ZiXgIQiGcfHNSlg62zQ30NMMC0"}
+Duration: 190ms
+----------------------------------------
+
+[2026-05-10T00:01:26.416Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 4ms
+----------------------------------------
+
+[2026-05-10T00:01:28.948Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 3ms
+----------------------------------------
+
+[2026-05-10T00:01:40.193Z]
+GET /users/
+Status: 200
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]}]
+Duration: 77ms
+----------------------------------------
+
+[2026-05-10T00:01:44.539Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T00:01:54.767Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3MTMxNCwiZXhwIjoxNzc4NDU3NzE0fQ.QRR_0ufKTP6rko4fzXkzNMdh-J6hWrCnbS_ZQosVs-8"}
+Duration: 144ms
+----------------------------------------
+
+[2026-05-10T00:01:54.813Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T00:01:58.814Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 3ms
+----------------------------------------
+
+[2026-05-10T00:01:59.143Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM8BO9MZaXi1taKXlGWfHpOMSKcfsz9g_y5T5R1X_fd-IIj_mtGxjL77lGjDFk-OXQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T00:08:38.619Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 53ms
+----------------------------------------
+
+[2026-05-10T00:08:38.917Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM_HaS-w9nxnfRsK4a-QriJpVEOYB6Minn5dOawfJcgMFkd0z7Cm2QDgnMqlHu-_xg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 10ms
+----------------------------------------
+
+[2026-05-10T00:11:08.812Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 19ms
+----------------------------------------
+
+[2026-05-10T00:11:09.034Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM8dc31MvQHtwLHarvgUb_ai1f8GoMy0NBK24QsibmGsNSxhdo0heSM-GHMnGxgazQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 4ms
+----------------------------------------
+
+[2026-05-10T00:11:35.288Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM8dc31MvQHtwLHarvgUb_ai1f8GoMy0NBK24QsibmGsNSxhdo0heSM-GHMnGxgazQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T00:11:35.507Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM8dc31MvQHtwLHarvgUb_ai1f8GoMy0NBK24QsibmGsNSxhdo0heSM-GHMnGxgazQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 3ms
+----------------------------------------
+
+[2026-05-10T00:28:29.501Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 54ms
+----------------------------------------
+
+[2026-05-10T00:28:30.014Z]
+GET /oauth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-546lFyqk6cXo1Rh_EYI6_j98YdiaRRuudrfa8Id6puavO42q6QGrfaS0fiOcgQA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 5ms
+----------------------------------------
+
+[2026-05-10T00:32:05.076Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 17ms
+----------------------------------------
+
+[2026-05-10T00:32:06.080Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM_s5iqt_dRzNbpR9jJrycUrx4mhHyE2pLqDk2U4OmGzoUTOoj-AOfWHHpitCEdLyA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 697ms
+----------------------------------------
+
+[2026-05-10T00:33:13.573Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 12ms
+----------------------------------------
+
+[2026-05-10T00:33:14.172Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM_83pMsDeZ-Zsm8qh5qK42pTjyHYprgVVvyN7vRd1DnRWNEqyhMSaEbETYFYA2nfg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 349ms
+----------------------------------------
+
+[2026-05-10T00:35:55.609Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T00:40:26.440Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 68ms
+----------------------------------------
+
+[2026-05-10T00:43:00.526Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 7ms
+----------------------------------------
+
+[2026-05-10T00:44:18.908Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T00:50:18.703Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NDIxOCwiZXhwIjoxNzc4NDYwNjE4fQ.z6kojQSqaSpmcCLzABT81wSxvL5UgFs1cJZa7lSCjuE"}
+Duration: 180ms
+----------------------------------------
+
+[2026-05-10T00:50:18.864Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 3ms
+----------------------------------------
+
+[2026-05-10T00:50:41.397Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 4ms
+----------------------------------------
+
+[2026-05-10T00:50:46.776Z]
+GET /users/
+Status: 200
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 110ms
+----------------------------------------
+
+[2026-05-10T00:51:13.546Z]
+GET /users/users
+Status: 404
+Request body: EMPTY
+Response body: EMPTY
+Duration: 13ms
+----------------------------------------
+
+[2026-05-10T00:51:16.725Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 74ms
+----------------------------------------
+
+[2026-05-10T00:51:17.370Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 58ms
+----------------------------------------
+
+[2026-05-10T00:51:49.863Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NDMwOSwiZXhwIjoxNzc4NDYwNzA5fQ.n042E62-NuSw5YA1wj7a1RbR9a99wARW6yvIom9Rv_0"}
+Duration: 140ms
+----------------------------------------
+
+[2026-05-10T00:51:50.072Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 52ms
+----------------------------------------
+
+[2026-05-10T00:52:15.976Z]
+POST /auth/register
+Status: 400
+Request body: {"email":"bob@email.com","password":"bob","username":"bob"}
+Response body: {"error":"Username or email already exists"}
+Duration: 56ms
+----------------------------------------
+
+[2026-05-10T00:56:44.854Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NDYwNCwiZXhwIjoxNzc4NDYxMDA0fQ.mn1kevxhF1VFlYqym91WliUOSTO__1najk4-XLVdJh4"}
+Duration: 142ms
+----------------------------------------
+
+[2026-05-10T00:56:45.084Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 60ms
+----------------------------------------
+
+[2026-05-10T00:56:50.575Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 12ms
+----------------------------------------
+
+[2026-05-10T00:56:51.210Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-Bg8KuV4iofitODF6oVs-plq6n7YWTDOX-XVmOfMZfTDrXJ8ocf3lXrNFS2jxZ_g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 352ms
+----------------------------------------
+
+[2026-05-10T00:58:42.834Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 10ms
+----------------------------------------
+
+[2026-05-10T00:58:43.437Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM81UFyjzS1xv9G1J8b0H9M09uSHgeQ1BH9UogJ9X2XlTNBYk3AumBZVfvQloDpL_g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 286ms
+----------------------------------------
+
+[2026-05-10T00:58:44.331Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 71ms
+----------------------------------------
+
+[2026-05-10T01:03:17.311Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 8ms
+----------------------------------------
+
+[2026-05-10T01:11:15.717Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 21ms
+----------------------------------------
+
+[2026-05-10T01:11:20.302Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T01:12:00.214Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 9ms
+----------------------------------------
+
+[2026-05-10T01:12:03.959Z]
+GET /swagger.json
+Status: 200
+Request body: EMPTY
+Response body: {"openapi":"3.0.0","info":{"title":"Auth Service API","version":"1.0.0","description":"API documentation for the e-auth-server-service oauth2.0 micro-service"},"servers":[{"url":"http://localhost:3001","description":"Local server"}],"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}},"security":[],"paths":{"/auth/register":{"post":{"tags":["REST-Auth"],"summary":"Register a new user","requestBody":{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["username","email","password"],"properties":{"username":{"type":"string","example":"newuser","description":"Required. Unique username for the user."},"email":{"type":"string","example":"newuser@example.com","description":"Required. User email, must be unique."},"password":{"type":"string","example":"Password123!","description":"Required. User password."},"role":{"type":"array","items":{"type":"string","enum":["user","admin"]},"example":["user"],"description"...(truncated)
+Duration: 3ms
+----------------------------------------
+
+[2026-05-10T01:14:02.667Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NTY0MiwiZXhwIjoxNzc4NDYyMDQyfQ.dRCVrfg4EdatZlWcJqY3_6UhsoKb6Xssofcz70XbXH0"}
+Duration: 177ms
+----------------------------------------
+
+[2026-05-10T01:14:02.831Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 66ms
+----------------------------------------
+
+[2026-05-10T01:14:25.248Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NTY2NSwiZXhwIjoxNzc4NDYyMDY1fQ.MFCxzGkBfLBCIXp9zSXzjPvwAtxWSHG9tj-dHMPnm7s"}
+Duration: 134ms
+----------------------------------------
+
+[2026-05-10T01:14:25.376Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 67ms
+----------------------------------------
+
+[2026-05-10T01:14:28.124Z]
+POST /auth/login
+Status: 400
+Request body: {"email":"","password":""}
+Response body: {"error":"Email and password required"}
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T01:14:28.228Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 51ms
+----------------------------------------
+
+[2026-05-10T01:14:41.194Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NTY4MSwiZXhwIjoxNzc4NDYyMDgxfQ.LRehOv_RSgZKmTN5Okwu511IWufdNgAROfTpiIUi70Q"}
+Duration: 128ms
+----------------------------------------
+
+[2026-05-10T01:14:41.304Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 54ms
+----------------------------------------
+
+[2026-05-10T01:15:37.822Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NTczNywiZXhwIjoxNzc4NDYyMTM3fQ.f7TmVg8glpSazLhu7fZ6csSKgmPa_3YaIuKiKCaMqEU"}
+Duration: 126ms
+----------------------------------------
+
+[2026-05-10T01:15:37.928Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 55ms
+----------------------------------------
+
+[2026-05-10T01:15:53.421Z]
+POST /auth/login
+Status: 200
+Request body: {"email":"hassan@email.com","password":"hassan"}
+Response body: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmY5OGFlNjAyZTUzNmM1YjQ2NjI5ZSIsInVzZXJuYW1lIjoiaGFzc2FuIiwiZW1haWwiOiJoYXNzYW5AZW1haWwuY29tIiwicm9sZSI6WyJ1c2VyIl0sImlhdCI6MTc3ODM3NTc1MywiZXhwIjoxNzc4NDYyMTUzfQ.rlYl8GZUEiv8MaMl2RiNme697-hQ4kJPJ_N8x0obYUU"}
+Duration: 125ms
+----------------------------------------
+
+[2026-05-10T01:15:53.665Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 186ms
+----------------------------------------
+
+[2026-05-10T01:16:10.205Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 5ms
+----------------------------------------
+
+[2026-05-10T01:16:10.799Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM8xOAnhDJKORUBgOQzIggmnWyW8k9XDOo0GSEe8wgfsFBpZh8C6Zp6zAEWPtnpWFA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 336ms
+----------------------------------------
+
+[2026-05-10T01:16:11.989Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 68ms
+----------------------------------------
+
+[2026-05-10T01:16:38.012Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T01:16:38.512Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM85MeXNp9v7e_XKQKKZJGroTeGj_LGe3TqMnG1DaHb20QVz8Webp681Oshqtc0pKA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 277ms
+----------------------------------------
+
+[2026-05-10T01:16:39.139Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 58ms
+----------------------------------------
+
+[2026-05-10T01:16:43.449Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T01:16:43.938Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM9aInU1_LmQSTHDc-VUTlYv0N1ZHNxpesz1ZSfx7YRra6vzgy58Z3i_LPgvDc5GHw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 282ms
+----------------------------------------
+
+[2026-05-10T01:16:44.657Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 55ms
+----------------------------------------
+
+[2026-05-10T01:16:49.090Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T01:16:49.580Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-yv-ZFtJMlPANznraic_BDs7pK-AIcQTLLjqInMJ_g12MTdHNl-sys6f99QJv1ow&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 265ms
+----------------------------------------
+
+[2026-05-10T01:16:50.299Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 59ms
+----------------------------------------
+
+[2026-05-10T01:16:53.878Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 1ms
+----------------------------------------
+
+[2026-05-10T01:16:54.231Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM8FqnLrOGrwZoqTkOb49h97IRaM2iUJiPVZTSJKYIXJoidYrJhHB4msFtAeFYXwig&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 163ms
+----------------------------------------
+
+[2026-05-10T01:16:54.867Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 53ms
+----------------------------------------
+
+[2026-05-10T01:17:24.696Z]
+GET /auth/google
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 2ms
+----------------------------------------
+
+[2026-05-10T01:17:25.227Z]
+GET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-ifGJvVMYgImGglRXLu9kQuPsqGwL7P7qPuzR2ODpOwZDsfOV9XoCrWDISKdvkhw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none
+Status: 302
+Request body: EMPTY
+Response body: EMPTY
+Duration: 271ms
+----------------------------------------
+
+[2026-05-10T01:17:26.348Z]
+GET /users/
+Status: 304
+Request body: EMPTY
+Response body: [{"_id":"69f498d7b131e11ad9eef261","username":"newuser","email":"newuser@example.com","role":["user"]},{"_id":"69f4a0ae65d691b73b9beefc","username":"string","email":"string","role":["user"]},{"_id":"69ff98ae602e536c5b46629e","username":"hassan","email":"hassan@email.com","role":["user"]},{"_id":"69ffaaefbd05ad385d0c2762","username":"user","email":"user@example.com","role":["user"]},{"_id":"69ffb6b707afdce0d736e61d","username":"bob","email":"bob@email.com","role":["user"]},{"_id":"69ffd205a4c06de2cb775a99","username":"HassanDev","email":"hassan1998dev@gmail.com","role":["user"]}]
+Duration: 55ms
+----------------------------------------
